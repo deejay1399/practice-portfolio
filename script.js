@@ -6,17 +6,20 @@ const projects = [
     {
         name: "CCIS Website",
         description: "A website for the College of Computer and Information Sciences (CCIS) that provides information about courses, faculty, and events.",
-        image: "assets/images/ccis.png"
+        image: "assets/images/ccis.png",
+        url: "https://ccisconnect.com/"
     },
     {
         name: "SAS Website",
         description: "A Website for an NGO designed for underprivileged athletes.",
-        image: "assets/images/sas.png"
+        image: "assets/images/sas.png",
+        url: "https://sedaquasprint.org/"
     },
     {
         name: "WeCare App",
         description: "A Mobile Application for job seeker and employer matching.",
-        image: "assets/images/wecare.png"
+        image: "assets/images/wecare.png",
+        url: "https://play.google.com/apps/testing/com.wecare.app.user"
     }
 ];
 
@@ -27,10 +30,13 @@ projects.forEach(p => {
     div.classList.add("project");
 
     div.innerHTML = `
-        <img src="${p.image}" alt="${p.name}">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        `;
+        <img src="${p.image}" />
+        <div class="project-content">
+         <h3>${p.name}</h3>
+            <p class="text-secondary">${p.description}</p>
+            <a href="${p.url}" target="_blank" class="btn" alt="${p.name}">View Project</a>
+        </div>
+    `;
 
     projectList.appendChild(div);
 });

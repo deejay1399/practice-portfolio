@@ -6,11 +6,16 @@ body{
 }
 
 header{
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: #0f172a;
+    padding: 15px 40px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 header h4{
@@ -37,19 +42,29 @@ header nav a:hover{
     color: #60a5fa;
 }
 
-#hero{
+#hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
-    background: #0f172a;
+    background: radial-gradient(circle at top, #1e293b, #020617);
 }
 
-.hero-content{
-    max-width: 600px;
-    margin: 0 auto;
+#hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
 }
 
-.highlight{
-    color: #3b82f6;
+.highlight {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#hero p {
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .hero-buttons{
@@ -63,17 +78,51 @@ section{
     padding: 50px 20px;
 }
 
-.project{
-    background: #1e293b;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    transition: 0.3s;
+#project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-.project:hover{
-    transform: translateY(-5px);
-    border: 1px solid #3b82f6;
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #1e293b;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 15px;
+}
+
+.project::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.project:hover::after {
+    opacity: 1;
 }
 
 .text-secondary{
@@ -88,22 +137,12 @@ button, .btn{
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 button:hover, .btn:hover{
     background: #60a5fa;
-}
-
-#project-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.project img{
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
 }
 
 form{
