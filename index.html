@@ -14,16 +14,22 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="hero">
-        <h1>Hi! I'm Diomedes Jr. Hinay</h1>
-        <p>Software Engineer</p>
-        <button onclick="sayhello()">Click Me</button>
+        <div class="hero-content">
+          <h1>Hi! I'm <span class="highlight">Diomedes Jr. Hinay</span></h1>
+          <p class="secondary-text">Software Engineer</p>
+          <div class="hero-buttons">
+            <button onclick="sayHello()">Click Me</button>
+            <a href="#projects" class="btn">View Projects</a>
+          </div>
+        </div>
       </section>
-      <section id="about">
+      <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>
           Hi there! I'm Diomedes Jr. Hinay, a passionate web developer with a
@@ -34,10 +40,23 @@
           new challenges and expand my skill set.
         </p>
       </section>
-      <section id="projects">
+      <section id="projects" class="fade-in">
         <h2>Projects</h2>
         <p>Here are some of my recent projects:</p>
         <div id="project-list"></div>
+      </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+          Feel free to reach out to me for collaborations, job opportunities, or
+          just to say hi!
+        </p>
+        <form onsubmit="sendMessage(event)">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </section>
     </main>
     <script src="script.js"></script>
