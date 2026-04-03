@@ -41,6 +41,21 @@ projects.forEach((p, index) => {
     `;
 
     projectList.appendChild(div);
+    
+    // Optimize image loading
+    const img = div.querySelector('img');
+    
+    // Add loaded class when image is ready
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+        img.addEventListener('error', () => {
+            img.classList.add('loaded');
+        });
+    }
 });
 
 const fadeElements = document.querySelectorAll(".fade-in");
