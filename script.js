@@ -1,9 +1,8 @@
-// Greeting Alert
+
 function sayHello(){
     alert("Welcome to my portfolio! 🚀\n\nI'm a passionate software engineer creating amazing digital experiences. Feel free to explore my work and get in touch!");
 }
 
-// Projects Data
 const projects = [
     {
         name: "CCIS Website",
@@ -25,7 +24,6 @@ const projects = [
     }
 ];
 
-// Render Projects
 const projectList = document.getElementById("project-list");
 
 projects.forEach((p, index) => {
@@ -45,7 +43,6 @@ projects.forEach((p, index) => {
     projectList.appendChild(div);
 });
 
-// Fade-in Animation on Scroll
 const fadeElements = document.querySelectorAll(".fade-in");
 
 const observerOptions = {
@@ -63,7 +60,6 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Active Nav Link on Scroll
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -85,7 +81,6 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Form Submission
 function sendMessage(e) {
     e.preventDefault();
     const form = e.target;
@@ -103,7 +98,6 @@ function sendMessage(e) {
     }, 1500);
 }
 
-// Theme Toggle
 function toggleTheme() {
     const body = document.body;
     const themeButton = document.querySelector('header button');
@@ -119,26 +113,6 @@ function toggleTheme() {
     }
 }
 
-// Load saved theme on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        document.querySelector('header button').textContent = '☀️';
-    }
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-            }
-        });
-    });
-});
-
-// Load saved theme on page load
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
