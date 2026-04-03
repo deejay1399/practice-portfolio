@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diomedes Jr. Hinay</title>
+    <meta name="description" content="Portfolio of Diomedes Jr. Hinay - Software Engineer creating amazing web experiences." />
+    <title>Diomedes Jr. Hinay | Software Engineer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <header role="banner">
       <h4>Diomedes</h4>
-      <nav>
+      <nav role="navigation">
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -17,39 +18,34 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button onclick="toggleTheme()" aria-label="Toggle theme" title="Switch between light and dark mode">🌙</button>
     </header>
     <main>
-      <section id="hero">
+      <section id="hero" role="main">
         <div class="hero-content">
           <h1>Hi! I'm <span class="highlight">Diomedes Jr. Hinay</span></h1>
-          <p class="secondary-text">Software Engineer</p>
+          <p class="secondary-text">Full-Stack Software Engineer</p>
           <div class="hero-buttons">
-            <button onclick="sayHello()">Click Me</button>
-            <a href="#projects" class="btn">View Projects</a>
+            <button onclick="sayHello()">Get Started</button>
+            <a href="#projects" class="btn">View My Work</a>
           </div>
         </div>
       </section>
       <section id="about" class="fade-in">
         <h2>About Me</h2>
         <p>
-          Hi there! I'm Diomedes Jr. Hinay, a passionate web developer with a
-          knack for creating dynamic and responsive websites. With a strong
-          background in HTML, CSS, and JavaScript, I enjoy bringing ideas to
-          life through code. Whether it's building a sleek portfolio or
-          developing interactive web applications, I'm always eager to take on
-          new challenges and expand my skill set.
+          Hi there! I'm Diomedes Jr. Hinay, a passionate software engineer with a knack for creating dynamic and responsive web experiences. With a strong foundation in HTML, CSS, and JavaScript, I specialize in building intuitive, user-centered solutions. Whether it's crafting elegant frontends or architecting robust backend systems, I'm committed to turning ideas into reality through clean, maintainable code and continuous learning.
         </p>
       </section>
       <section id="projects" class="fade-in">
-        <h2>Projects</h2>
-        <p>Here are some of my recent projects:</p>
+        <h2>Featured Projects</h2>
+        <p>Here are some of my recent projects that showcase my skills and passion for development.</p>
         <div id="project-list"></div>
       </section>
-      <section id="contact">
-        <h2>Contact Me</h2>
+      <section id="contact" class="fade-in">
+        <h2>Get in Touch</h2>
         <p>
-          Feel free to reach out to me for collaborations, job opportunities, or
-          just to say hi!
+          I'm always open to collaboration, exciting opportunities, and meaningful conversations. Feel free to reach out!
         </p>
         <form onsubmit="sendMessage(event)">
           <input type="text" placeholder="Your Name" required />
